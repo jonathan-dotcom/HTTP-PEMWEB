@@ -29,17 +29,14 @@
     <button onclick="appendToResult('/')">/</button>
 
     <script>
-        // Function to append a character to the result field
         function appendToResult(value) {
             document.getElementById("result").value += value;
         }
 
-        // Function to clear the result field
         function clearResult() {
             document.getElementById("result").value = '';
         }
 
-        // Function to calculate the result
         function calculateResult() {
             try {
                 const expression = document.getElementById("result").value;
