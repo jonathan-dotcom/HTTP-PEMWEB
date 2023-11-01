@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="price-tables mt-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col"><div class="card" id="parrent">
+                    <div class="card-body">
+                        <h4 class="card-title">Starter</h4 class="card-title">
+                        <h5 style="color:slategrey">IDR 30,000</h5>
+                        <p style="color:gray">-- Features</p>
+                        <ul>
+                            <li>5GB Storage</li>
+                            <li>Email Support</li>
+                        </ul>
+                    </div>
+            </div></div>
+            <div class="col"><div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Bussiness</h4 class="card-title">
+                    <h5 style="color:slategrey">IDR 80,000</h5>
+                    <p style="color:gray">-- Features</p>
+                    <ul>
+                        <li>20GB Storage</li>
+                        <li>Priority Email support</li>
+                        <li>Advanced Analytics</li>
+                        <li>SEO Tools</li>
+                    </ul>
+                </div>
+            </div></div>
+            <div class="col"><div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Enterprise</h4>
+                    <h5 style="color:slategrey">IDR 150,000</h5>
+                    <p style="color:gray">-- Features</p>
+                    <ul>
+                        <li>100GB Storage</li>
+                        <li>24/7 Phone Support</li>
+                        <li>Custom Reports</li>
+                    </ul>
+                </div>
+            </div></div>
+            <div class="col"><div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Free</h4 class="card-title">
+                    <h5 style="color:slategrey">IDR 0</h5>
+                    <p style="color:gray">-- Features</p>
+                    <ul>
+                        <li>2GB Storage</li>
+                        <li>Community Support</li>
+                    </ul>
+                </div>
+            </div></div>
+            <div class="col"><div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Pro</h4 class="card-title">
+                    <h5 style="color:slategrey">IDR 60,000</h5>
+                    <p style="color:gray">-- Features</p>
+                    <ul>
+                        <li>10GB Storage</li>
+                        <li>Priority Email Support</li>
+                        <li>Basic Analytics</li>
+                    </ul>
+                </div>
+            </div></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const div = document.getElementById('authors');
+    const list = document.createDocumentFragment();
+    const url = 'https://ets-pemweb-23-pjqyzk5qxq-et.a.run.app/price-tables';
+
+    fetch(url)
+        .then((response) => {
+        return response.json();
+        })
+        .then((data) => {
+        let card = data;
+
+        card.map(function(card) {
+            let tier = document.createElement('h4');
+            let price = document.createElement('h5');
+            let features = document.createElement('p');
+
+            name.innerHTML = `${card.name}`;
+            email.innerHTML = `${author.email}`;
+
+            li.appendChild(name);
+            li.appendChild(email);
+            list.appendChild(li);
+        });
+        }).
+        .catch(function(error) {
+        console.log(error);
+        });
+
+    ul.appendChild(list);
+
+  </script>
+</html>
